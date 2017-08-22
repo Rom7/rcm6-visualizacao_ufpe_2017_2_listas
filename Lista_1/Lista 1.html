@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Lista 1</title>
+        <script src="Lista%201_fichiers/d3.js"></script>	        	
+    </head>
+    <body>
+      <h1>Visualização de Dados 2017.2 Lista de Exercícios 1</h1>
+      <!--------------------------------- -->
+      <div id="info"> 
+	<h2>Informações Gerais</h2>
+	O objetivo desta lista é praticar os conceitos vistos em sala e 
+construir uma base de código que será possivelmente útil para o projeto 
+da disciplina.
+	É recomendada a leitura dos capítulos 3 a 8 do livro <em>Interactive Data Visualization for the Web</em> e também o uso da documentação da <em>Mozilla Developer Network</em>.
+      </div>
+      <!--------------------------------- -->
+      <div id="duedate"> 
+      <h2>Data de Entrega</h2>
+      A entrega deverá ser feita via GitHub até 22/08/2017 até 23:59. Veja as instruções para entrega no Google Classroom.
+      </div>
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 1</h2>
+	Crie um arquivo chamado <em>problema1.html</em>. Neste arquivo crive um
+ elemento svg que replica cada uma das figuras abaixo. A essência da 
+figura deve ser mantida, embora que o posicionamento exato dos itens 
+pode variar para cada resposta.<br>
+
+	<center><img src="Lista%201_fichiers/parlament.png" height="200px"></center>
+        <center><img src="Lista%201_fichiers/south_korea.png" height="300px"></center>
+
+       OBS: Para esse exercício não é necessário o uso de D3 (mas pode ser usado caso desejado). 
+
+      </div>
+      <!--------------------------------- -->
+      <div id="problem2"> 
+	<h2>Problema 2</h2>
+	Para a solução deste problema, crie um arquivo <em>problema2.html</em> e outro chamado <em>problema2.js</em>. Neste problema, incrementaremos o gráfico de dispersão (<a href="https://en.wikipedia.org/wiki/Scatter_plot"><em>scatter plot</em></a>)
+ que implementamos em sala.
+	O objetivo é criar um gráfico de dispersão que plote dados dinâmicos, 
+seguindo um parâmetro dado pelo usuário. Para tanto, crie uma página 
+html que contém o gráfico de dispersão, um text field de entrada e um 
+botão, como na figura abaixo:
+	
+	<center><img src="Lista%201_fichiers/sample_interface_1.png" height="600px"></center>
+
+Cada vez que o botão for clicado, um número N aleatório de pontos deve 
+ser gerado, onde N é o valor presente no text field (valor default deve 
+ser 10). Os pontos gerados devem ser da forma (x,y), com x e y entre 0 e
+ 70. As coordenadas x e y devem ser usadas para posicionar os pontos no 
+scatter plot. O gráfico deve conter eixos, seguindo o padrão da figura 
+acima (cores, largura, pontilhamento) e labels para os eixos.
+	
+      </div>
+      <!--------------------------------- -->
+      <div id="problem3"> 
+	<h2>Problema 3</h2>
+	Para a solução deste problema, crie um arquivo <em>problema3.html</em> e outro chamado <em>problema3.js</em>. Neste problema, o nosso objetivo é criar uma função que gera visualizações de séries temporais.
+	<br>
+	<br>
+	Como dataset de teste, usaremos os dados de incidência de AIDS por sexo no Brasil (<a href="https://visualizacao-ufpe.github.io/data_vis_assignments/2017.2/data/prevalencia_aids.xls">link</a>).
+ Crie um gráfico que mostre a evolução da temperatura incidência de AIDS
+ em homens e mulheres. A curva correspondente aos dados de homens deve 
+dever ser visualizada como uma linha azul, enquanto que a de mulheres 
+com uma linha vermelha. O eixo X deve usar uma escala de tempo que 
+mostra os anos no período dos dados.
+
+	O gráfico deve se assemelhar ao gráfico abaixo:
+        <center><img src="Lista%201_fichiers/sample_interface_2.png"></center>
+		
+      </div>
+    
+   
+</body></html>
