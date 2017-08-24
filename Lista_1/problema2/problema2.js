@@ -13,13 +13,15 @@ var svg = d3.select("body")
     .append("g")
     .attr("transform","translate("+margin.left+","+margin.top+")"); 
 
-function updatePlot(n){
-    console.log(document.getElementById("pontos").value);
+function updatePlot(){
+
+    var n = document.getElementById("pontos").value
+    console.log();
     var dataset = [];
     for(var i = 0 ; i < n ; ++i){
 	   dataset.push([Math.random()*75,Math.random()*75]);
     }
-    //console.log(dataset);
+    console.log(dataset);
     var circles = svg.selectAll("circle")
 	.data(dataset)
 	.attr("cx",function(d){return xScale(d[0]) +20;})
@@ -30,27 +32,10 @@ function updatePlot(n){
 	.append("circle")
     .attr("r",5)
 	.attr("cx",function(d){return xScale(d[0]) +20;})
-	.attr("cy",function(d){return yScale(d[1]);})
-	.attr("fill",function(d){return cScale(d[1])});
+	.attr("cy",function(d){return yScale(d[1]);});
 
     circles.exit().remove();
 }
-
-d3.select("body")
-    .append("div")
-    .append("input")
-    .attr("id","pontos")
-    .attr("name","#Pontos")
-    .attr("type","number")
-    .attr("value","10")
-
-d3.select("body")
-    .append("div")
-    .append("input")
-    .attr("name","maj")
-    .attr("type","button")
-    .attr("value","Gerar")
-    .on("click",updatePlot());
 
 var xScale = d3.scaleLinear().domain([0,75]).range([0,width]);
 var yScale = d3.scaleLinear().domain([0,70]).range([height,0]);
@@ -90,7 +75,7 @@ yAxisGroup.selectAll("svg g g g line")
     .attr("stroke-dasharray", "2,5")
     .attr("stroke-width", "0.5px")
     .attr("stroke","green")
-	.attr("x2",width);
+	 .attr("x2",width);
 
 
 svg.selectAll("circle")
