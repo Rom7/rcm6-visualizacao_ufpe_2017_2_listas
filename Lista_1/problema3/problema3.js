@@ -1,4 +1,6 @@
 //recuperation des données
+
+
 var dataset = [
 [1990,10.74,1.96],
 [1991,13.75,2.87],
@@ -29,38 +31,45 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
-var absc = d3.scaleTime().range([0, width]);
+var absc = d3.scaleLinear().range([0, width]);
 var ordo = d3.scaleLinear().range([height, 0]);
+var absc1 = d3.scaleLinear().range([0, width]);
+var ordo1 = d3.scaleLinear().range([height, 0]);
 
 
 var hommes = d3.line()
-    .absc(function(d) { 
+    .x(function(d) { 
     	console.log(absc(d[0]));
     	return absc(d[0]); 
     })
-    .ordo(function(d) { return ordo(d[1]); });
+    .y(function(d) { return ordo(d[1]); });
 
 var femmes = d3.line()
-    .absc(function(d) { 
+    .x(function(d) { 
     	console.log(absc(d[0]));
     	return absc(d[0]); 
     })
-    .ordo(function(d) { return ordo(d[2]); });
+    .y(function(d) { return ordo(d[2]); });
 
 absc.domain(d3.extent(dataset, function(d) { return d[0]; }));
+absc1.domain(d3.extent(dataset, function(d) { return d[0]; }));
 ordo.domain([0, d3.max(dataset, function(d) {
+  return Math.max(d[1], d[2]); })])
+ordo1.domain([0, d3.max(dataset, function(d) {
   return Math.max(d[1], d[2]); })])
 
 svg.append("path")
-      .attr("d", hommes(dataset))
+      .data([dataset])
       .attr("class", "line")
       .style("stroke","blue")
+      .style("fill","none")
       .attr("d", hommes);
 
 svg.append("path")
-      .data(dataset)
+      .data([dataset])
       .attr("class", "line")
       .style("stroke","red")
+      .style("fill","none")
       .attr("d", femmes);
 
 svg.append("g")
@@ -68,7 +77,16 @@ svg.append("g")
       .call(d3.axisBottom(absc));
 
 svg.append("g")
+      .attr("class","axesec")
+      .call(d3.axisBottom(absc1));
+
+svg.append("g")
       .call(d3.axisLeft(ordo));
+
+svg.append("g")
+      .attr("transform", "translate("+width+", 0)")
+      .attr("class","axesec")
+      .call(d3.axisLeft(ordo1));
 
 
 
