@@ -1,6 +1,6 @@
 // LES VARIABLES GLOBALES ET IMPORTATION
 
-var ip_addr = "192.168.1.2"; // para trabalhar em rede local com 2 computadoras
+var ip_addr = "localhost"; // mudar para trabalhar em rede local com 2 computadoras
 var w = 1200;
 var h = 1080;
 var svg = d3.select("body")
