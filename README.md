@@ -7,4 +7,5 @@ Lista 2
     pb 2 : brush is not working as expected  
 Lista 3  
     pb 1 OK 100%  
-    pb 2 OK 100%
+    pb 2 OK 100%  
+    pb 3 OK 100% (The TagClouds need approximately 5 minutes to be computed)
